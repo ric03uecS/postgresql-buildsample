@@ -6,6 +6,7 @@ before_install:
   - env
 install: pip install --use-mirrors -r requirements.txt
 before_script: 
+  - env
   - psql -c 'drop database if exists foodb2;' -U postgres -w
   - psql -c 'create database foodb2;' -U postgres -w
 script: python pgsqlsample.py
